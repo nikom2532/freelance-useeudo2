@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>You See You Do:::www.UseeUdo.com</title>
+<meta name="distribution" content="Thailand" />
+<meta name="revisit-after" content="7 days" />
+
+<meta name="keywords" content="UseeUdo" />
+<meta name="description" content="UseeUdo" />
+
+<meta name="copyright" content="&copy; 2013 http://www.UseeUdo.asia" />
+<meta name="robots" content="index,follow" />
+<link href="../style/style.css" rel="stylesheet" type="text/css" />
+
+<!--slide-->
+	<link rel="stylesheet" type="text/css" href="../slide/engine1/style1.css" media="screen" />
+	<style type="text/css">a#vlb{display:none}</style>
+	<script type="text/javascript" src="../slide/engine1/jquery.js"></script>
+<!--slide-->
+
+</head>
+
+<body>
+				<?
+                   	  include("../admin/include/connect.php");
+					  mysql_query("SET NAMES UTF8");
+                ?>
+			<div id="head">
+                  <div class="headleft">
+            			 	 <?
+                                        include "../include/head.inc.php";
+                              ?>
+                   </div><!--headleft-->
+                    <div class="headright">
+                    		<div id="main_menu">
+                               <?
+                                         $current_page=3;
+                                        include "../include/main-menu.inc.php";
+                              ?>
+                            </div><!--main_menu-->
+                    </div><!--headright-->
+            </div><!--head-->
+            <div class="cleaner"></div>
+            <div id="slides">
+                    		 <!-- -----------------------------slider----------------------------------- -->
+                              <?
+                                        include "../include/slide.inc.php";
+                              ?>
+                                <!-- -----------------------------------End slider------------------------------ -->
+                    
+                    	</div><!--slides-->
+            <div class="cleaner"></div>
+	<div id="wrapper">
+            
+    <div id="content">
+            		
+            		<div class="content-left">
+                        	 <img src="../images/left_prod.png" border="0">
+                           
+                    </div><!--content-left-->
+                    
+                     <div class="content-right">
+                      <br><br><br>
+                     		 <center><img src="../images/prod.png"/></center><br>
+                          
+                      <table width="92%">
+                      		  
+                      
+                        <?
+								$id = $_GET[id];
+						
+                        		$sql = "SELECT * FROM tb_catemain WHERE id_cate = '$id' ";
+								$result = mysql_db_query($dbname,$sql);
+								while($r= mysql_fetch_array($result))
+								{
+									$id_cate = sprintf("%d", $r[id_cate]);
+									$name_cate = $r[name_cate];
+									$detail_cate = $r[detail_cate];
+						?>
+                        	<tr>
+                                <td height="38" valign="top">
+                                        <strong><?=$name_cate?></strong>
+                                 </td>
+                        </tr>    
+                                 <td>
+                                         <?=$detail_cate?>
+                                 </td>
+                            </tr>      
+                        <?  } ?>
+                     
+                      </table>
+                     </div>
+            <a href="../contact-us/index.php?id=<?=$id?>" style="float:right; padding-right:60px;"><img src="../images/cart.png"/></a>
+    </div><!--content-->
+    <div class="cleaner"></div>
+          
+    </div><!--wrapper-->
+    <div class="cleaner"></div>
+    <div id="wrapper-footer">
+    	<div class="adsvertising">
+                <?
+						include "../include/footer.inc.php";
+			   ?>
+      	</div><!--adsvertising-->  
+                      
+     <!-- <div id="footer">
+      	<p>&nbsp;</p>
+      			<table width="980">
+                	<tr>
+                    	<td align="left">
+                        Copyright &copy; 2013 UseeUdo.com<br>
+                        43 ชั้น 3 ซอยสุขุมวิท 71 <br>
+                        แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพฯ 10110
+
+                        </td>
+                        <td align="right">
+                         โทร. 02-662-7070  โทรสาร 02-662-7878<br>
+                         E-mail : info@useeudo.com <br>
+                         Powered by <a href="http://www.baanwebsite.com" target="_blank">baanwebsite.com</a>
+
+                        </td>
+                    </tr>
+                </table>
+         </div>-->
+         
+    </div><!--wrapper-footer-->        
+</body>
+</html>

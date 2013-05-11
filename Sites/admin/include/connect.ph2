@@ -1,0 +1,46 @@
+<?php
+	if( $_SERVER['HTTP_HOST'] == 'localhost' )
+	{
+		$ServerName = "localhost";
+		$User = "root";
+		$Password = "abc123";
+		$dbname = "useeudo";
+
+		$server_name = "http://localhost/baanwebsite/customer/useeudo/admin";
+		$server_file = "http://localhost/baanwebsite/customer/useeudo/album";
+	}
+	else
+	{
+		//Hosting
+		$ServerName = "localhost";
+		$User = "shoppingcart";
+		$Password = "mmmf123";
+		$dbname = "shoppingcart";
+	
+		$server_name = "http://www.useeudo.com/admin";
+		$server_file = "http://www.useeudo.com/album";
+	}
+	
+	$productfolder = "product";
+	$webboardfolder="webboard";
+	$downloadfolder = "download";
+	$menufolder="menu";
+	$bannerfolder="banner";
+	$albumfolder="album";
+	$articlefolder="article";
+	$promotionfolder="promotion";
+	$smallfolder = "small";
+	$largefolder = "large";
+	
+	
+
+	$cn = mysql_pconnect( $ServerName, $User, $Password );
+	mysql_select_db($dbname, $cn);
+	mysql_query("SET NAMES UTF8"); //kong
+	if(!$cn)
+	{
+		echo "<h3>ERROR : ไม่สามารถติดต่อฐานข้อมูลได้</h3>";
+		exit();
+	
+	}
+?>

@@ -1,0 +1,276 @@
+<?
+	@session_start();
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml2/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../style/style.css" />
+<?
+include_once("../include/wb_config.php");
+?>
+<title><?=$title_name?></title>
+
+<head>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/dropdown.js"></script>
+
+    <script type="text/javascript">
+    ddaccordion.init({
+        headerclass: "submenuheader", //Shared CSS class name of headers group
+        contentclass: "submenu", //Shared CSS class name of contents group
+        revealtype: "click", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+        mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+        collapseprev: true, //Collapse previous content (so only one open at any time)? true/false 
+        defaultexpanded: [], //index of content(s) open by default [index1, index2, etc] [] denotes no content
+        onemustopen: false, //Specify whether at least one header should be open always (so never all headers closed)
+        animatedefault: false, //Should contents open by default be animated into view?
+        persiststate: true, //persist state of opened contents within browser session?
+        toggleclass: ["", ""], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+        togglehtml: ["suffix", "<img src='../images/plus.gif' class='statusicon' />", "<img src='../images/minus.gif' class='statusicon' />"], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+        animatespeed: "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+        oninit:function(headers, expandedindices){ //custom code to run when headers have initalized
+            //do nothing
+        },
+        onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+            //do nothing
+        }
+    })
+    </script>
+</head>
+<?
+	include("../include/chksession.php"); 
+?>
+<body>
+
+<script type="text/javascript">
+	function urlEncode( s )
+	{
+		return encodeURIComponent( s ).replace( /\%20/g, '+' ).replace( /!/g, '%21' ).replace( /'/g, '%27' ).replace( /\(/g, '%28' ).replace( /\)/g, '%29' ).replace( /\*/g, '%2A' ).replace( /\~/g, '%7E' );
+	}
+	
+	function urlDecode( s )
+	{
+	  return decodeURIComponent( s.replace( /\+/g, '%20' ).replace( /\%21/g, '!' ).replace( /\%27/g, "'" ).replace( /\%28/g, '(' ).replace( /\%29/g, ')' ).replace( /\%2A/g, '*' ).replace( /\%7E/g, '~' ) );
+	}
+   
+    function InitVariable()
+    {
+		var name_cate = urlEncode(document.forms.Form1.name_cate.value); //encode ด้วย
+		//var catemainid = document.forms.Form1.catemainid.value;
+
+		//ตรวจสอบว่ากรอกข้อมูลหรือไม่
+		if ( name_cate.length==0)
+		{
+			alert("กรุณากรอกชื่่อหมวดหมู่ด้วยค่ะ");
+			document.forms.Form1.name_cate.focus();           
+			return false;
+		}
+		
+    }
+</script>
+
+<script language="javascript">
+
+function CreateNewRow()
+{
+var intLine = parseInt(document.frmMain.hdnMaxLine.value);
+intLine++;
+
+var theTable = document.all.tbExp
+
+var newRow = theTable.insertRow(theTable.rows.length)
+
+newRow.id = newRow.uniqueID
+
+var item1 = 1
+
+var newCell
+
+//*** Column 1 ***//
+
+newCell = newRow.insertCell(0)
+
+newCell.id = newCell.uniqueID
+
+newCell.setAttribute("className", "css-name");
+
+newCell.innerHTML = "<center><INPUT TYPE=\"TEXT\" SIZE=\"40\" NAME=\"youtube"+intLine+"\" VALUE=\"\"></center>"
+
+document.frmMain.hdnMaxLineYou.value = intLine;
+
+
+
+//*** Column 2 ***//
+
+newCell = newRow.insertCell(0)
+
+newCell.id = newCell.uniqueID
+
+newCell.setAttribute("className", "css-name");
+
+newCell.innerHTML = "<center><INPUT TYPE=\"TEXT\" SIZE=\"40\" NAME=\"name"+intLine+"\" VALUE=\"\"></center>"
+
+document.frmMain.hdnMaxLine.value = intLine;
+
+}
+
+function RemoveRow()
+
+{
+
+intLine = parseInt(document.frmMain.hdnMaxLine.value);
+
+if(parseInt(intLine) > 0)
+
+{
+
+theTable = (document.all) ? document.all.tbExp :
+
+document.getElementById("tbExp")
+
+theTableBody = theTable.tBodies[0];
+
+theTableBody.deleteRow(intLine);
+
+intLine--;
+
+document.frmMain.hdnMaxLine.value = intLine;
+
+}  
+
+}  
+
+</script>
+
+	<div id="wrapper">
+    	<div id="tophead">
+        	<div class="logo"><p>&nbsp;</p></div>
+        	<div class="meminfo">
+			<?
+				//ข้อมูลของสมาชิก ส่วน Header
+				include("../include/top_meminfo.inc.php"); 
+			?>
+            </div>
+        </div>
+
+        <div id="left">
+            <div class="glossymenu">
+			<?
+				//เมนูด้านซ้าย
+				include("../include/left_menu.inc.php");
+            ?>
+            </div>
+        </div> <!--left-->
+
+		<!--frame top-->
+        <div id="right_top">&nbsp;</div>
+
+        <div id="right">
+
+        	<div class="detail">
+				<!-- =========== coding begin here =============== -->
+                <?
+					$catemainid = $_GET[id];
+				
+					include ("../include/connect.php");
+					mysql_query("SET NAMES UTF8");
+					mysql_select_db($dbname, $cn);
+	
+					$sql = "select * from tb_catesecret where id_cate='$catemainid'";
+					$result = mysql_db_query($dbname,$sql);
+					$r = mysql_fetch_array($result);
+					$catemain_name = $r[name_cate];
+				?>
+
+               <h4>เพิ่มรายการ</h4>
+            	<h5>ระบบจัดการสูตรอาหาร > บริหารสูตรอาหาร > แก้ไข/ลบสูตรอาหาร > เพิ่มรายการ</h5>
+                <h3><?=$catemain_name?></h3>
+                
+              <form name="frmMain" action="fn_addcatesub1.php" method="post" id="Form1" onsubmit="return InitVariable()" enctype="multipart/form-data">
+						
+                        <input name="catemainid" type="hidden" value="<?=$catemainid?>"/>
+                        
+                <table width="445" id="tbExp">
+                <tr>
+                    <td>
+                        <div>รายการ</div>
+                    </td>
+                    <td>
+                        <div>วีดีโอ </div>
+                    </td>
+                </tr>
+                 </table>       
+         
+
+                
+ 					<br />
+                        <input type="hidden" name="hdnMaxLine" value="0">
+                        <input type="hidden" name="hdnMaxLineYou" value="0">
+                <input name="btnAdd" type="button" id="btnAdd" value="+" onClick="CreateNewRow();">
+                <input name="btnDel" type="button" id="btnDel" value="-" onClick="RemoveRow();">
+
+                        <br /><br />
+					
+                         <center>   
+                         	<input type="submit" value="บันทึก" />
+                            <input type="reset" value="เริ่มใหม่" />
+                   		 </center>
+                   
+			</form>
+
+
+			<!-- <form action="fn_addcatesub1.php" method="post" id="Form1" onsubmit="return InitVariable()" enctype="multipart/form-data"> 
+
+				<input name="catemainid" type="hidden" value="<?=$catemainid?>"/>
+                
+                <table>
+                	<tr>
+                    	<td>รายการที่ 1 :</td>
+                        <td>
+			                <input name="name_cate" type="text" size="30" /><font color="red">*</font>
+ 						</td>
+                    </tr>
+                   <!-- <tr>
+                    	<td>รูปหมวดหมู่ย่อย :</td>
+                        <td>
+			                <input type="file" name="file_name">
+ 						</td>
+                    </tr>-->
+                    <!--<tr>
+                        <td colspan="2">&nbsp;</td>
+					</tr>
+                    <tr align="center">
+                        <td colspan="2">
+                            <input type="submit" value="บันทึก" />
+                            <input type="reset" value="เริ่มใหม่" />
+                        </td>
+					</tr>
+                    <tr><td>&nbsp;</td></tr>-->
+                    <!--<tr align="left">
+                        <td colspan="2">
+                            <input type="button" value="<< กลับไปหมวดหมู่หลัก" onclick="window.location='cate_mainedit.php'" />
+                        </td>
+					</tr>-->
+               <!-- </table>
+                </form>-->
+				<?
+				mysql_close($cn);
+				?>
+ 				<!-- =========== coding end here =============== -->
+            </div>
+            
+        </div> <!--right-->
+
+		<!--frame footer-->
+        <div id="right_footer">&nbsp;</div>
+
+        <div class="clear"></div>
+        
+        <div id="footer">
+            	<?
+           			 include("../include/footer.inc.php"); 
+       			 ?>
+           </div>
+   </div>
+</body>
+</html>

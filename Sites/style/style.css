@@ -1,0 +1,597 @@
+/* CSS Document */
+body{
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:14px;
+	color:#333;
+	background:#fff url(../images/bg.png) repeat-x;
+	margin-top:4px;
+	line-height:25px;
+}
+
+#wrapper{
+	width:980px;
+	margin:0px auto auto auto;
+	background:#fff url(../images/bg-wrapper.png) repeat-y;
+	padding-top:0px;
+}
+
+.cleaner {clear:both; width:100%; height:0px;}
+.h30{clear:both; width:100%; height:30px;}
+.h20{clear:both; width:100%; height:20px;}
+.h10{clear:both; width:100%; height:10px;}
+#zoom img{
+	border: 5px solid #fff;
+}
+.small-txt{
+	font-size:12px;
+	text-align:center;
+}
+
+a{
+	color:#003;
+	text-decoration:none;
+}
+a:hover{
+	color:#F60;
+	text-decoration:none;
+}
+h3{
+	color:#333;
+	padding-left:15px;
+	font-size:18px;
+}
+/*h4{
+	color:#000;
+	padding:3px 5px ;
+	margin:5px 0;
+	width:250px;
+	text-align:center;
+	background:#a0d3fb;
+	font-size:15px;
+	border-radius:5px;
+	border:2px solid #6db9f5;
+}*/
+h5{
+	color:#fff;
+	padding:0px  0 0 30px;
+	margin:5px 0  5px  100px;
+	width: 300px;
+	display: block;
+	text-align: left;
+	background:#3bcbf2  url(../images/h_app.png) left center no-repeat;
+	font-size:14px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-weight:normal;
+	height:auto;
+	min-height:30px;
+}
+h5:hover{
+	background:#68d5f6 url(../images/h_app2.png) left center no-repeat;
+}
+h5 a{
+	display:block;
+	color:#0006ce;
+	font-weight:bold;
+}
+h5 a:hover{
+	color:#ffffff;
+	text-decoration:underline;
+}
+
+h6{
+	color:#fff;
+	padding:0px 0 0 25px ;
+	margin:5px 0  5px  80px;
+	width:auto;
+	display: block;
+	text-align: left;
+	background: url(../images/pdf-icon.png) left center no-repeat;
+	font-size:13px;
+	font-weight: bold;
+	height:30px;
+}
+h6 a:hover{
+	color:#21496f;
+}
+
+#head{
+	width:980px;
+	height:100px;
+	margin:0px auto auto auto;
+	background:transparent;
+	position:relative;
+}
+
+.headleft{
+	width:200px;
+	/*margin-left:5px;*/
+	float: left; 
+	padding: 0px; 
+	margin-right:20px; 
+	text-decoration: none;
+}
+
+.headright{
+	width:700px;
+	color:#003;
+	float: left; 
+	padding: 5px; 
+	margin: auto 5px auto 40px; 
+	text-decoration: none; 
+}
+#logo{
+	height:98px;
+	width:980px;
+	margin:auto;
+}
+#slides{
+	width:980px;
+	margin:auto;
+	padding:0px;
+	/*border:1px solid silver;*/
+	height:310px;
+}
+
+#main_menu{
+	margin:20px auto auto 180px;
+	width:500px;
+	height:40px;
+}
+
+#main_menu ul { 
+	width:600px;
+	margin:auto auto auto 30px;
+	padding: 0;
+	list-style: none;
+	height:30px;
+ }
+#main_menu ul li {
+	float:left;
+	display: inline;
+	margin:4px;	 
+}
+#main_menu ul li a {
+	display: block;
+	height: 20px;
+	padding: 10px 20px 5px 20px;
+	font-size: 16px;
+	color:#fff;
+	text-shadow: 1px 1px 1px #333;
+	text-decoration: none;
+	text-align: center; 
+	outline: none;
+	font-weight:600;
+	height:30px;
+	/*width:200px;*/
+	/*background:#249ffe;*/
+	background:url(../images/bg-menu.png) no-repeat;
+}
+#main_menu ul li a:hover{
+	color:#333;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+
+#content{
+	margin:auto;
+	width:980px;
+	/*background:#FFF url(../images/bg-content.png) no-repeat;*/
+}
+
+#content p{
+	/*padding-left:45px;*/
+	padding-top:10px;
+	
+}
+#content p strong{
+	font-weight:800;
+}
+
+.logo{
+	margin:0px;
+	padding:0px;
+}
+
+.content-right{
+	width:680px;
+	/*margin-left:5px;*/
+	color:#003;
+	float: left; 
+	padding: 0px; 
+	margin-right:5px; 
+	text-decoration: none;
+	/*background:#FFF;*/
+}
+.content-right p{
+	padding-left:10px;
+}
+.content-right tr td{
+	padding-left:30px;
+	padding-right:0px;
+	-webkit-border-radius: 8px; /* กำหนดรัศมีของมุมครับ */
+	-khtml-border-radius: 8px; /* กำหนดรัศมีของมุมครับ */
+	-moz-border-radius: 8px; /* กำหนดรัศมีของมุมครับ */
+	border-radius: 8px; /* กำหนดรัศมีของมุมครับ */
+}
+
+.content-right ul{
+	width: 600px;
+	height:400px;
+	overflow-y: scroll;
+	padding-left:25px;
+	float:left;
+}
+.content-right ul li{
+	list-style:none;
+/*	background:url(../images/line.png) center bottom no-repeat;	*/
+	padding:10px 5px 2px 0px;
+	text-align:center;
+}
+.content-right ul li a{
+	width: 680px;
+	color:#000;
+	text-decoration:none;
+	/*padding:8px 5px 8px 5px;*/
+	line-height:23px;
+	padding-left:25px;
+	text-align:center;
+
+}
+.content-right ul li a:hover{
+	font-size:14px;
+	color:#F60;
+}
+.content-left{
+	width:250px;
+	/*margin-left:5px;*/
+	min-height:460px;
+	padding:5px;
+	float: left; 
+	margin-right:10px;
+	margin-left:13px; 
+	text-decoration: none;
+}
+.content-left p{
+	/*padding-left:5px;*/
+	text-align:justify;
+}
+
+.content-left table td{
+	padding-left:10px;
+	padding-right:10px;
+	text-align:justify;
+}
+
+.about{
+	width:600px;
+	height:335px;
+	background:url(../images/bg-about.png) no-repeat;
+	padding-left:15px;
+}
+.space-bar{
+	padding-left:45px;
+}
+.space{
+	padding-left:210px;
+}
+/******************footer***************************/
+#wrapper-footer{
+	width:100%;
+	/*background:transparent url(../images/bg-footer.png) bottom repeat-x;*/
+}
+#footer{
+	width:980px;
+	margin:auto;
+	height:150px;
+	font-size:12px;
+	text-align:right;
+	background:url(../images/bg-footer.png) no-repeat;
+	color:#FFF;
+}
+#footer p{
+	text-align:right;
+	padding-right:25px;
+	font-size:12px;
+	padding-top:2px;
+}
+#footer a{
+	color:#fff;
+	text-decoration:none;
+}
+#footer a:hover{
+	color:#F00;
+}
+/********************/
+.content-center{
+	width:1004px;
+	min-height:450px;
+	float:left;
+	margin:0  auto;
+	padding:10px;
+	background:url(../images/bg_center.png) bottom no-repeat;
+	text-align:justify;
+	/*position:relative;*/
+}
+.content-view{
+	width:1004px;
+	min-height:450px;
+	float:left;
+	margin:0  auto;
+	padding-left:5px;
+	background:url(../images/view_pro.png) bottom no-repeat;
+	text-align:justify;
+	/*position:relative;*/
+}
+
+.content-center .box{
+	width:200px;
+	height:250px;
+	margin-left:15px;
+	background:#FFF;
+	padding:5px;
+	border:solid #F93 4px;
+	-webkit-border-radius: 8px; /* กำหนดรัศมีของมุมครับ */
+	-khtml-border-radius: 8px; /* กำหนดรัศมีของมุมครับ */
+	-moz-border-radius: 8px; /* กำหนดรัศมีของมุมครับ */
+	border-radius: 8px; /* กำหนดรัศมีของมุมครับ */
+/*	position:absolute;
+	top:90px;
+	left:30px;*/
+}
+
+.box-taxt{
+	overflow-y: scroll;
+	width:200px;
+	height:250px;
+	display: inline-block;
+	/*position:absolute;*/
+}
+
+.content-center img{
+	margin:auto;
+}
+.content-center p{
+	font-size:18px;
+	padding-right:40px;
+	line-height:28px;
+}
+
+.content-center h3{
+	font-family:ebrima;
+	padding:7px 35px 10px 40px;
+	height:20px;
+	font-size:20px;
+	margin:0px;
+	background:#3bc9f3 url(../images/h_servl2-over.png) left center no-repeat;
+	color:#fff;
+	width: auto;
+	display: inline-block;
+	font-weight: bold;
+}
+.content-center h4{
+	font-family:ebrima;
+	font-size:18px;
+	padding:7px 35px 10px 40px;
+	height:20px;
+	margin:0px;
+	/*background:#3bc9f3 url(../images/h_servl2.png) left center no-repeat;*/
+	background:#3bc9f3 url(../images/h_servl2-over.png) left center no-repeat;
+	color:#0006ce;
+	text-shadow: 1px 1px 1px #fff;
+	/*width: 260px;*/
+	display: block;
+	font-weight:600;
+	margin:20px;
+	cursor:pointer;
+}
+.content-center h4 a{
+	color:#0006ce;
+	text-shadow: 1px 1px 1px #fff;
+	text-decoration:none;
+	font-style:normal;
+}
+.content-center h4 a:hover{
+	color:#FFF;
+}
+.content-center h5{
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:17px;
+	padding:5px 35px 5px 40px;
+	height:16px;
+	width:auto;
+	margin:0px;
+	background:#3bc9f3 url(../images/h_servl2-over.png) left center no-repeat;
+	color:#0006ce;
+	display: block;
+	font-weight:normal;
+	margin:20px;
+	cursor:pointer;
+}
+.content-center h5 a{
+	color:#0006ce;
+	font-weight:normal;
+}
+.content-center h5 a:hover{
+	color:#fff;
+	text-decoration:none;
+}
+/*.content-center h4:hover{
+	background:#5dd8fb url(../images/h_servl2-over.png) left center no-repeat;
+	text-decoration:underline;
+}*/
+
+.content-center ul{
+	float:left;
+	margin-left:-25px;
+	
+}
+.content-center ul li{
+	list-style:none;
+	text-align:left;
+	float:left;
+}
+.content-center ul li a{
+	color:#000;
+	text-decoration:none;
+	line-height:23px;
+	text-align:left;
+}
+.content-center ul li a:hover{
+	font-size:14px;
+	color:#F60;
+}
+
+
+
+
+
+.detail p{
+	font-size:18px !important;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+
+.app-data{
+	padding:10px 0 10px 30px;
+	margin:0;
+	
+}
+.app-data li {
+	font-weight:bold;
+	font-size:13px;
+	width:450px;
+	position:relative;
+}
+.app-data li a {
+	width:380px;
+	display: block;
+	line-height:15px;
+}
+
+
+.app-data li span {
+	font-weight: normal;
+	font-size:13px;
+	position:absolute;
+	top:0;
+	right:0;
+}
+
+
+
+.app-data li ul li {
+	font-weight: normal;
+	font-size:13px;
+	line-height:20px;
+}
+.contact  .info{
+	width:300px;
+	
+}
+.contact  .msg{
+	width:300px;
+	height:150px;
+	
+}
+.contact p{
+	padding:0px !important;
+	margin:0;
+	line-height:28px;
+	font-size:18px;
+}
+.contact p a{
+	color:#060;
+	
+}
+ .paging{
+	clear:both;
+	height:30px;
+	width:100%;
+	padding-top:10px;
+}
+ .paging ul{
+	padding:0;
+	margin:0;
+	float:right;
+}
+ .paging ul li{
+	padding:0;
+	margin:0;
+	display:inline;
+	float:left;
+}
+ .paging ul li a{
+	padding:0 2px;
+	display:block;
+	border:1px solid #ddd;
+	margin:0px;
+	min-width:20px;
+	height:20px;
+	text-align:center;
+	font-size:13px;
+	font-weight:bold;
+}
+.paging ul li a.current{
+	color:#06F;
+	
+}
+
+
+.font-products{
+	font-family:Tahoma;
+	font-size:18px;
+}
+.adsvertising{
+	width:980px;
+	margin:auto;
+}
+/*-----------------------------------------------------*/
+@font-face {
+	font-family:ebrima;
+	font-style: normal;
+	src: url(../fonts/ebrima.eot); 
+}
+@font-face {
+	font-family:sctiptbl;
+	font-style: normal;
+	src: url(../fonts/ebrima.ttf); 
+}
+
+.contact{
+	width:600px;
+	height:480px;
+	/*margin-left:5px;*/
+	background:#fff url(../images/contac1t.png) no-repeat;
+	padding-top:32px;
+	padding-left:10px;
+	color:#000;
+}
+.contact-detail{
+	width:590px;
+	height:190px;
+	padding-left:10px;
+	color:#000;
+}
+.scoll select{
+	width:200px;
+}
+.send{
+	background:url(../images/send.png) no-repeat;
+	width:157px;
+	height:43px;
+	-webkit-border-radius: 13px; /* กำหนดรัศมีของมุมครับ */
+	-khtml-border-radius: 13px; /* กำหนดรัศมีของมุมครับ */
+	-moz-border-radius: 13px; /* กำหนดรัศมีของมุมครับ */
+	border-radius: 13px; /* กำหนดรัศมีของมุมครับ */
+}
+.orange{
+	color:#dc7610;
+}
+.name{
+	color:#000;
+}
+.orange a{
+	color:#ff9933;
+}
+.orange a:hover{
+	color:#ff9933;
+}

@@ -1,0 +1,127 @@
+/* CSS Document */
+#wrapper{
+	width:980px;
+	padding:0px auto auto auto;
+	margin:0px auto;
+}
+#tophead{
+	background:url(../images/header.png) no-repeat; 
+	width:980px;
+	height:150px;
+	padding:0px auto;
+}
+#right{
+	background:url(../images/frameside.jpg);
+	width:770px;
+	float:right;
+}
+#right .detail{
+	padding:10px 10px auto 10px;
+	width:750px;
+	float:right;
+}
+
+#right_top{
+	background:url(../images/frametop.jpg);
+	width:770px;
+	float:right;
+}
+
+#right_footer{
+	background:url(../images/framefooter.jpg);
+	width:770px;
+	float:right;
+}
+
+#left{
+	width:210px;
+	float:left;
+	color:#333;
+	font-size:16px;
+	background:#666;
+
+}
+.glossymenu{
+margin: 5px 0;
+padding: 0 0 0 3px;
+width: 200px; /*width of menu*/
+border: 1px solid #9A9A9A;
+border-bottom-width: 0;
+}
+
+.glossymenu a.menuitem{
+background: black url(../images/glossyback.gif) repeat-x bottom left;
+font: bold 14px "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, sans-serif;
+color:#000;
+display: block;
+position: relative; /*To help in the anchoring of the ".statusicon" icon image*/
+width: auto;
+padding: 4px 0;
+padding-left: 10px;
+text-decoration: none;
+}
+
+
+.glossymenu a.menuitem:visited, .glossymenu .menuitem:active{
+color: white;
+}
+
+.glossymenu a.menuitem .statusicon{ /*CSS for icon image that gets dynamically added to headers*/
+position: absolute;
+top: 5px;
+right: 5px;
+border: none;
+}
+
+.glossymenu a.menuitem:hover{
+background-image: url(../images/glossyback2.gif);
+}
+
+.glossymenu div.submenu{ /*DIV that contains each sub menu*/
+background: white;
+}
+
+.glossymenu div.submenu ul{ /*UL of each sub menu*/
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+.glossymenu div.submenu ul li{
+border-bottom: 1px solid #666;
+}
+
+.glossymenu div.submenu ul li a{
+display: block;
+font: normal 13px "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, sans-serif;
+color: black;
+text-decoration: none;
+padding: 2px 0;
+padding-left: 10px;
+}
+
+.glossymenu div.submenu ul li a:hover{
+background: #DFDCCB;
+colorz: white;
+}
+
+#footer{
+	margin-top:20px;
+	width:980px;
+	height:50px;
+	background:url(../images/footer.gif) repeat-x;
+	padding:10px auto;
+	border-top:1px solid #666;
+	line-height:5px;
+}
+#footer .copyright{
+	padding-top:20px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	color:#000;
+	text-align:center;
+}
+.clear{
+	clear:both;
+	width:980;
+}
